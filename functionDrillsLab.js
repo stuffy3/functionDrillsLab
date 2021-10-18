@@ -5,7 +5,9 @@
 */
 
 //CODE HERE
-
+function helloWorld() {
+  console.log("Hello, World!");
+};
 
 ////////////////// PROBLEM 2 ////////////////////
 /*
@@ -15,8 +17,10 @@
 */
 
 //CODE HERE
-
-
+function printName(personName) {
+  console.log(personName);
+};
+printName('Tanner')
 ////////////////// PROBLEM 3 ////////////////////
 /*
   Create a function called greeting that
@@ -29,7 +33,11 @@
 */
 
 //CODE HERE
-
+function greeting(name) {
+  let greetingString = String(name);
+  console.log(`Hello ${greetingString}`)
+}
+greeting('Jake')
 
 ////////////////// PROBLEM 4 ////////////////////
 /*
@@ -40,7 +48,14 @@
 */
 
 //CODE HERE
+function add(num1, num2) {
+  let addNumber = Number(num1, num2);
 
+  return num1 + num2
+}
+
+let sum = add(10, 20);
+console.log(sum)
 
 ////////////////// PROBLEM 5 ////////////////////
 /*
@@ -52,6 +67,17 @@
 */
 
 //CODE HERE
+function nameCheck(name) {
+  if(name === "Steven") {
+    console.log("What's up Steven")
+  } else if(name === "Bryan") {
+    console.log("Hey Bryan!")
+  } else {
+    console.log(`Cool name ${name}`);
+  }
+}
+let nameGreeting = nameCheck('Steven');
+
 
 
 ////////////////// PROBLEM 6 ////////////////////
@@ -65,7 +91,24 @@
 */
 
 //CODE HERE
-
+function faveColorFinder(color) {
+  let faveColorFinderString = String(color);
+  if (faveColorFinderString === 'red') {
+    
+    return 'red is a great color'
+  } else if(faveColorFinderString === 'green') {
+  
+    return 'green is a solid favorite color'
+  } else if (faveColorFinderString === 'black') {
+   
+    return 'so trendy'
+  } else {
+    
+    return 'you need to evaluate your favorite color choice'
+  }
+}
+let colorRating = faveColorFinder('green')
+console.log(colorRating)
 
 ////////////////// PROBLEM 7 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
