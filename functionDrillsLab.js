@@ -269,18 +269,28 @@ function buyChocolateRound(goldAmount) {
   return goldAmount / frogsPrice
 
 }
-let roundTotalFrogs = Math.ceil(buyChocolateRound(100))
+let roundTotalFrogs = Math.floor(buyChocolateRound(100))
 console.log(roundTotalFrogs)
 
 ////////////////// PROBLEM 15 ////////////////////
-let sampleArray = [0,1,2,3,4,7,5,6,8,9]
+let sampleArray = [0,1,2,3,4,7,8,9]
 /*
   Write a function that takes in an array of numbers as an argument. In the body of the function, write logic to determine if the array is in ascending order. The function should return true, if it is sorted in ascending order, false if it is not. Create a variable, `arrayIsAscending` and set it equal to your function invoked. Use the sample array to test this function.
 */
 
 //CODE HERE
-
-
+function arrayNumber(array) {
+  ascending = true;
+  for(i = 0; i < array.length; i++) {
+    if (array[i+1] <= array[i]) {
+      ascending = false;
+    }
+  }
+  
+  return ascending
+}
+let ascendCheck = arrayNumber(sampleArray)
+console.log(ascendCheck)
 ////////////////// PROBLEM 16 ////////////////////
 
 let duck = "cute";
@@ -303,13 +313,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['duck']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ["rubberDuck", 'duck']
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['sailorDuck', 'rubberDuck', 'duck']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['realDuck', 'duck']
