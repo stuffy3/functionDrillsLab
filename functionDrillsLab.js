@@ -69,15 +69,18 @@ console.log(sum)
 //CODE HERE
 function nameCheck(name) {
   if(name === "Steven") {
-    console.log("What's up Steven")
+    
+    return "What's up Steven"
   } else if(name === "Bryan") {
-    console.log("Hey Bryan!")
+
+    return"Hey Bryan!"
   } else {
-    console.log(`Cool name ${name}`);
+    
+    return `Cool name ${name}`;
   }
 }
 let nameGreeting = nameCheck('Steven');
-
+console.log(nameGreeting)
 
 
 ////////////////// PROBLEM 6 ////////////////////
@@ -119,8 +122,12 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
-
+function printAllNames(array) {
+  for(let i = 0; i < array.length; i++) {
+    console.log(array[i]);
+  }
+}
+printAllNames(namesArr);
 ////////////////// PROBLEM 8 ////////////////////
 /*
   Create a function called thatsOdd that takes in a single argument (a number).
@@ -130,8 +137,18 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
+function thatsOdd(numOdd) {
+  if(numOdd % 2 === 0) {
 
+    return "That's not odd!"
+  } else {
 
+    return 'That is odd indeed!'
+  }
+}
+
+let oddChecker = thatsOdd(37)
+console.log(oddChecker);
 ////////////////// PROBLEM 9 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 /* 
@@ -144,7 +161,22 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 */
 
 //CODE HERE
-
+function bigOrSmall(arr) {
+  let answers = [];
+  for(let i = 0; i < arr.length; i++) {
+      if(arr[i] > 100) {
+        answers.push('big')
+      } else if(arr[i] <= 100) {
+        answers.push('small')
+      }
+  }
+  let arrayEvaluator = answers;
+  console.log(arrayEvaluator)
+  
+  return arrayEvaluator
+  
+}
+bigOrSmall(bigOrSmallArray);
 
 ////////////////// PROBLEM 10 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -155,7 +187,18 @@ let loser = 'Glimmer'
 */
 
 //CODE HERE
+function theEliminator(contestants, loser) {
+  for(let i = 0; i < contestants.length; i++) {
+    if(contestants[i] === loser) {
+      contestants.splice(i, 1)
+    }
+  }
+  return contestants
 
+}
+
+theEliminator(contestants, loser)
+console.log(contestants);
 
 ////////////////// PROBLEM 11 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -165,7 +208,12 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+function upperCase(upperCaseName) {
+  let u = upperCaseName.toUpperCase()
 
+  console.log(u)
+}
+upperCase(sampleString)
 
 ////////////////// PROBLEM 12 ////////////////////
 /*
@@ -177,7 +225,22 @@ let sampleString = "Hi, my name is Kylo."
   If it does, return 'email verified' and if doesn't, 
   return 'must provide a valid email address'
 */
+function emailCheck(email) {
+  let emailString = String(email);
+  let emailStringTrim = emailString.trim();
+    if(emailStringTrim.includes('@') === true) {
 
+      return 'email verified'
+    } else {
+
+      return 'must provide a valid email address'
+    }
+  }
+
+
+  emailCheck()
+  myEmail = emailCheck('tanner86100@gmail.com')
+console.log(myEmail)
 ////////////////// PROBLEM 13 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -185,7 +248,14 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+function buyChocolate(goldAmount) {
+  let frogsPrice = 3
 
+  return goldAmount / frogsPrice
+
+}
+let totalFrogs = Math.round(buyChocolate(100))
+console.log(totalFrogs)
 
 ////////////////// PROBLEM 14 ////////////////////
 /*
@@ -193,7 +263,14 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+function buyChocolateRound(goldAmount) {
+  let frogsPrice = 3
 
+  return goldAmount / frogsPrice
+
+}
+let roundTotalFrogs = Math.ceil(buyChocolateRound(100))
+console.log(roundTotalFrogs)
 
 ////////////////// PROBLEM 15 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
